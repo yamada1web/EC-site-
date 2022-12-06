@@ -1,42 +1,42 @@
+<?php
+    session_start();
+    if($_SESSION['admin_login'] == false){
+        header("Location:./index.html");
+    }
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="../seedling-solid.svg">
-    <title>News</title>
+    <title>ダッシュボード</title>
+    <link rel="icon" href="../newspaper-solid.svg">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1 class="title">Make memories of a lifetime with this bag</h1>
-    <header class="page-header">
-        <nav>
-            <ul>
-                <li class="current"><a href="index.html">Home</a></li>
-                <li class="item-news"><a href="#">News</a></li>
-                <li class="item-login"><a href="../admin/index.html">Login</a></li>
-                <li class="item-topic"><a href="../topics/topics.html">Topic</a></li>
-                <li class="item-info"><a href="#">Info</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header>
+        <div class="container">
+            <div class="header-logo">
+                <h1><a href="dashboard.php">管理画面</a></h1>
+            </div>
 
+            <nav class="menu-right menu">
+                <a href="index.html">ログアウト</a>
+            </nav>
+        </div>
+    </header>
     <main>
         <div class="wrapper">
             <div class="container">
-                <article>
-                    <div class="page-title">
-                        <h1>ここに記事のタイトルが入る</h1>
-                        <p>2022/xx/xx</p>
-                    </div>
-                    <div class="page-text">
-                        <p>記事本文</p>
-                        <p>ようこそ！ ここではあなたの日常に寄り添えるカバンを用意しています。</p>
-                        <br>
-                        <p>デザインが良く、そしてよりよい品質のカバンをより多くお客様に提供するよう努めてまいりますのでを取よろしくお願いいたします。</p>
-                    </div>
-                </article>
+                <h1>ダッシュボード</h1>
+            </div>
+            <div class="boxs">
+                <a href="news.php" class="box">
+                    <i class="far fa-newspaper icon"></i>
+                    <p>記事管理</p>
+                </a>
             </div>
         </div>
     </main>
@@ -73,5 +73,3 @@
     </footer>
 </body>
 </html>
-
-

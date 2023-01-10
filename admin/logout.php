@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php
-if (isset($_SESSION['users'])) {
-	unset($_SESSION['users']);
+if (isset($_SESSION['users2'])) {
+	unset($_SESSION['users2']);
 	//echo 'ログアウトしました。';
 	if (isset($_COOKIE['email'])) {
 		//echo "<script type='text/javascript'>alert('" . $_COOKIE['user_id'] . "');</script>";

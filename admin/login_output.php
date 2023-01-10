@@ -5,9 +5,9 @@ $email = $_POST['email'];
 
 unset($_SESSION['users2']);
 $pdo = new PDO(
-	'mysql:host=localhost;dbname=users2',
-	'user2',
-	'password'
+	'mysql:host=localhost;dbname=yamadashu2_ecshop',
+	'yamadashu2_user2',
+	'password2'
 );
 $sql = $pdo->prepare('select * from users2 where email=? and password=?');
 $sql->execute([$_REQUEST['email'], $_REQUEST['password']]);

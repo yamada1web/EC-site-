@@ -1,6 +1,6 @@
 <?php
     try{
-        $dbh = new PDO("mysql:host=localhost;dbname=corporate_db","root","");
+        $dbh = new PDO("mysql:host=localhost;dbname=yamadashu2_corporatedb","yamadashu2_user2","password2");
     }catch(PDOException $e){
         var_dump($e->getMessage());
         exit;
@@ -12,14 +12,13 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="js">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Life with bag</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="flickity.css">
     <link rel="icon" href="../seedling-solid.svg">
     <link rel="stylesheet" href="home.css">
 </head>
@@ -36,9 +35,9 @@
             <nav>
                 <ul>
                     <li class="current"><a href="#">ホーム</a></li>
-                    <li class="item-news"><a href="page.html">新着ニュース</a></li>
+                    <li class="item-news"><a href="./page.php">新着ニュース</a></li>
                     <li class="item-login"><a href="../admin/index.html">ログイン</a></li>
-                    <li class="item-topic"><a href="../topics/topics.html">トピックス</a></li>
+                    <li class="item-topic"><a href="../shop/shop.php">商品一覧</a></li>
                     <li class="item-cart"><a href="info.html">Info</a></li>
                 </ul>
             </nav>

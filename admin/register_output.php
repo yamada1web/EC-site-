@@ -15,9 +15,9 @@
     $email = $_POST['email'];
 
     $pdo = new PDO(
-        'mysql:host=localhost;dbname=users2;charset=utf8',
-        'user2',
-        'password'
+        'mysql:host=localhost;dbname=yamadashu2_ecshop;charset=utf8',
+        'yamadashu2_user2',
+        'password2'
     );
     if (isset($_SESSION['users2'])) {
         $id = $_SESSION['users2']['id'];

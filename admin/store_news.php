@@ -1,16 +1,16 @@
 <?php 
-    session_start();
-    if($_SESSION['email'] == false){
-        header("Location:./index.html");
-        exit;
-    }
+    // session_start();
+    // if($_SESSION['email'] == false){
+    //     header("Location:./index.html");
+    //     exit;
+    // }
 
     $title = isset($_POST['title'])? htmlspecialchars($_POST['title'], ENT_QUOTES,'utf-8'):'';
     $content = isset($_POST['content'])? htmlspecialchars($_POST['content'], ENT_QUOTES, 'utf-8'):'';
     $content = nl2br($content);
 
     try{
-        $dbh = new PDO("mysql:host=localhost;dbname=corporate_db","root","");
+        $dbh = new PDO("mysql:host=localhost;dbname=yamadashu2_corporatedb","yamadashu2_user2","password2");
     }catch(PDOException $e){
         var_dump($e->getMessage());
         exit;

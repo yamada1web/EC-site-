@@ -1,62 +1,63 @@
+<?php
+    $id = isset($_GET['id'])? htmlspecialchars($_GET['id'],ENT_QUOTES,'utf-8'):'';
+
+    if($id == ''){
+        header('location:./index.php');
+    }
+
+    // DB接続
+    try{
+        $dbh = new PDO("mysql:host=localhost;dbname=yamadashu2_corporatedb","yamadashu2_user2","password2");
+    }catch(PDOException $e){
+        var_dump($e->getMessage());
+        exit;
+    }
+
+    $stmt = $dbh->prepare("SELECT * FROM news WHERE id = :id");
+    $stmt->bindParam(":id",$id);
+    $stmt->execute();
+    $news - $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company Information</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="info.css">
+    <link rel="icon" href="../seedling-solid.svg">
+    <title><?php echo $news[0]['title']; ?></title>
 </head>
 <body>
     <h1 class="title">Make memories of a lifetime with this bag</h1>
-    <header>
+    <header class="page-header">
         <nav>
             <ul>
-                <li class="current"><a href="index.html">ホーム</a></li>
-                <li class="item-news"><a href="page.php">新着ニュース</a></li>
+                <li class="current"><a href="index.php">ホーム</a></li>
+                <li class="item-news"><a href="#">新着ニュース</a></li>
                 <li class="item-login"><a href="../admin/index.html">ログイン</a></li>
                 <li class="item-topic"><a href="../shop/shop.php">商品一覧</a></li>
-                <li class="item-cart"><a href="#">Info</a></li>
+                <li class="item-info"><a href="./info.html">Info</a></li>
             </ul>
         </nav>
     </header>
 
-    <br>
-    <br>
-
-    <div class="wrapper  last-wrapper">
-        <div class="container">
-            <div class="wrapper-title">
-                <h3>information</h3>
-                <p>会社概要</p>
+    <main>
+        <div class="wrapper">
+            <div class="container">
+                <article>
+                    <div class="page-title">
+                        <h1><?php echo $news[0]['title']; ?></h1>
+                        <p><?php echo $news[0]['updated_at']; ?></p>
+                    </div>
+                    <div class="page-text">
+                        <?php echo $news[0]['content']; ?>
+                    </div>
+                </article>
             </div>
-            <table class="about-table">
-                <tbody>
-                    <tr>
-                        <th>会社名</th>
-                        <td>Life with bag</td>
-                    </tr>
-                    <tr>
-                        <th>代表者名</th>
-                        <td>山田 太郎</td>
-                    </tr>
-                    <tr>
-                        <th>所在地</th>
-                        <td>
-                            <p>〒160-0022</p>
-                            <p>東京都新宿区新宿1丁目 新宿ビル3階</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>アクセス</th>
-                        <td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.493037452454!2d139.7102049646824!3d35.689483030192434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ce9cc315b03%3A0xe99f6c02ec60470e!2z44CSMTYwLTAwMjIg5p2x5Lqs6YO95paw5a6_5Yy65paw5a6_77yR5LiB55uu!5e0!3m2!1sja!2sjp!4v1667886718694!5m2!1sja!2sjp" width="400" height="300" style="border:0;" allowfullscreen></iframe></td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
-    </div>
-
+    </main>
 
     <footer id="footer">
         <section class="primary">
@@ -90,3 +91,5 @@
     </footer>
 </body>
 </html>
+
+

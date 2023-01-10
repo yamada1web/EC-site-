@@ -9,7 +9,7 @@
     $id = isset($_POST['id'])? htmlspecialchars($_POST['id'], ENT_QUOTES, 'utf-8'):'';
 
     try{
-        $dbh = new PDO("mysql:host=localhost;dbname=corporate_db","root","");
+        $dbh = new PDO("mysql:host=localhost;dbname=yamadashu2_corporatedb","yamadashu2_user2","password2");
     }catch(PDOException $e){
         var_dump($e->getMessage());
         exit;

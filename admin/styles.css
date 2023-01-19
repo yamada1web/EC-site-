@@ -150,6 +150,27 @@ textarea{
         text-align: left;
     }
 
+
+/* regi_end.php */
+.thanks{
+    background-color: #ebeced;
+    text-align: center;
+    padding: 50px 0;
+    justify-content: center;
+}
+
+.thanks h4{
+    margin-bottom: 10px;
+}
+
+.btn-gray{
+    background-color: #a2aab0;
+    border: 1px solid #a2aab0;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 15px;
+}
+
 /* create_news */
 .edit-form{
     width: 80%;
@@ -236,6 +257,16 @@ header {
         font-weight: bold;
     }
 
+    img{
+        transition:0.6s;
+        margin: 30px 0;
+    }
+
+    img:hover{
+        transform: rotate(360deg) scale(1.3);
+    }
+
+
 /* news */
 .list table{
     border-collapse: collapse;
@@ -253,7 +284,46 @@ header {
         background-color: #ebeced;
     }
 
+/* users.php */
+.serch{
+    text-align: right;
+    width: 100%;
+}
 
+.serch input{
+    width: 30%;
+    padding: 4px;
+    border: solid 1px #222;
+}
+
+.serch button{
+    padding: 5px 10px;
+}
+
+
+/* paging */
+.paging{
+    margin: 0 0 10px;
+    padding: 10px 10p 5px;
+    text-align: right;
+}
+
+.paging li{
+    display: inline;
+    margin: 0 1px;
+}
+
+.paging a,
+.paging span{
+    color: #4c586f;
+    padding: 5px 8px;
+}
+
+.paging span{
+    background-color: #4c586f;
+    border-radius: 5px;
+    color: #fff;
+}
 
 
     /* footer */

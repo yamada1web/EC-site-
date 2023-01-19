@@ -1,11 +1,11 @@
 <?php
-    $id = isset($_GET['id'])? htmlspecialchars($_GET['id'],ENT_QUOTES,'utf-8'):'';
+    $id = isset($_GET['id'])? htmlspecialchars($_GET['id'], ENT_QUOTES, 'utf-8'):'';
 
-    if($id == ''){
-        header('location:./index.php');
-    }
+    // if($id==''){
+    //     header('location:./index.php');
+    // }
 
-    // DB接続
+    //DB接続
     try{
         $dbh = new PDO("mysql:host=localhost;dbname=yamadashu2_corporatedb","yamadashu2_user2","password2");
     }catch(PDOException $e){
@@ -13,10 +13,10 @@
         exit;
     }
 
-    $stmt = $dbh->prepare("SELECT * FROM news WHERE id = :id");
+    $stmt = $dbh->prepare("SELECT * FROM news WHERE id=:id");
     $stmt->bindParam(":id",$id);
     $stmt->execute();
-    $news - $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $news = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +52,7 @@
                         <p><?php echo $news[0]['updated_at']; ?></p>
                     </div>
                     <div class="page-text">
-                        <?php echo $news[0]['content']; ?>
+                        <?php echo $news[0]['content']?>
                     </div>
                 </article>
             </div>

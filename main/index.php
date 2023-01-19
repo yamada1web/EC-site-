@@ -35,7 +35,7 @@
             <nav>
                 <ul>
                     <li class="current"><a href="#">ホーム</a></li>
-                    <li class="item-news"><a href="./page.php">新着ニュース</a></li>
+                    <li class="item-news"><a href="page.php">新着ニュース</a></li>
                     <li class="item-login"><a href="../admin/index.html">ログイン</a></li>
                     <li class="item-topic"><a href="../shop/shop.php">商品一覧</a></li>
                     <li class="item-cart"><a href="info.html">Info</a></li>

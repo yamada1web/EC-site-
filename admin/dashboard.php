@@ -49,8 +49,16 @@
                 </div>
                 <div class="boxs">
                     <a href="news.php" class="box">
-                        <i class="far fa-newspaper icon"></i><!-- fontawesome利用部分 -->
+                        <img src="../file-solid.svg" width="60" height="60"alt="">
                         <p>記事管理</p>
+                    </a>
+                    <a href="users.php" class="box">
+                        <img src="../person-solid.svg" width="60" height="60" alt="">
+                        <p>会員管理</p>
+                    </a>
+                    <a href="orders.php" class="box">
+                        <img src="../truck-front-solid.svg" width="50" height="50" alt="">
+                        <p>受注管理</p>
                     </a>
 
                 </div>
@@ -59,7 +67,7 @@
     </main>
     <footer id="footer">
         <section class="primary">
-            <p class="logo"><a href="#">Life with bag</a></p>
+            <p class="logo"><a href="../main/index.php">Life with bag</a></p>
             <p class="address">
                 〒000-0000 東京都××区×××丁目<br>
                 TEL : 111-222-3333 / FAX : 444-555-6666
